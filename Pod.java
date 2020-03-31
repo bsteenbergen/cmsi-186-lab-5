@@ -18,11 +18,14 @@ public class Pod {
     }
 
     public double distanceTraveled(double startTime, double endTime, int slices) {
-        // Complete this method. It estimates the distance traveled between the
-        // given start and end times by slicing up the time periods into a certain
-        // number of slices, as will be described in class. If this method is not
-        // passed at least one slice, throw an IllegalArgumentException with the
-        // message "At least one slice required".
+        if (slices < 1) {
+            throw new IllegalArgumentException("At least one slice required");
+        }
+        var distance = 0.0;
+        var timeSlice = (endTime - startTime) / slices;
+        for (var i = 0; i < slices; i++) {
+            var t = startTime + i * timeSlice;
+        }
         return 0.0;
     }
 }
