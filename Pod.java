@@ -25,6 +25,7 @@ public class Pod {
         var timeSlice = (endTime - startTime) / slices;
         for (var i = 0; i < slices; i++) {
             var t = startTime + i * timeSlice;
+            distance += v(t) * timeSlice;
         }
         return distance;
     }
