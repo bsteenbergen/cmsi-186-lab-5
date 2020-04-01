@@ -4,6 +4,9 @@ import java.util.HashMap;
 
 public class PodRace {
     public static Set<Pod> race(double distance, Set<Pod> racers, double timeSlice, double timeLimit) {
-        // IMPLEMENT THIS METHOD
+        if (distance <= 0) {
+            throw new IllegalArgumentException("Distance must be greater than zero");
+        }
+        return racers;
     }
 }
