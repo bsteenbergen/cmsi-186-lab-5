@@ -7,6 +7,19 @@ public class PodRace {
         if (distance <= 0) {
             throw new IllegalArgumentException("Distance must be greater than zero");
         }
-        return racers;
+        if (timeLimit < 0) {
+            throw new IllegalArgumentException("Time cannot be negative");
+        }
+
+        var sine = new HashMap<Pod, Double>(); //do this for every pod?
+            sine.get(SinePod);
+            sine.put(SinePod, distance * timeSlice) 
+
+        var winners = new HashSet<Pod>();
+
+        for (var p : racers) {
+            
+        }
+        return winners;
     }
 }
