@@ -1,6 +1,6 @@
 public class PolynomialPod extends Pod {
     public PolynomialPod(String name, double... coefficients) {
-        super(name, t -> calculatePolynomial());
+        super(name, t -> calculatePolynomial(coefficients, t));
     }
 
     private static double calculatePolynomial(double[] coefficients, double x) {
@@ -11,3 +11,4 @@ public class PolynomialPod extends Pod {
         return result;
     }
 }
+

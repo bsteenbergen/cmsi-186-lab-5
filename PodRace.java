@@ -11,14 +11,18 @@ public class PodRace {
             throw new IllegalArgumentException("Time cannot be negative");
         }
 
-        var sine = new HashMap<Pod, Double>(); //do this for every pod?
-            sine.get(SinePod);
-            sine.put(SinePod, distance * timeSlice) 
-
-        var winners = new HashSet<Pod>();
-
-        for (var p : racers) {
+        var distances = new HashMap<Pod, Double>();
             
+        var winners = new HashSet<Pod>();
+        for (var t = 0; t < timeLimit; t += timeSlice) { 
+            for (var p : racers) {
+                var distanceForThisTimeSlice = 0.0; //Pod.distanceTraveled(); // fix later
+                distances.put(distances.getOrDefault(p, 0.0) + distanceForThisTimeSlice); 
+                if (distances.get(p) >= distance) {
+                    winners.add(p);
+                }
+            }
+            break;
         }
         return winners;
     }
