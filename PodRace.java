@@ -10,14 +10,17 @@ public class PodRace {
         if (timeLimit < 0) {
             throw new IllegalArgumentException("Time cannot be negative");
         }
+        if (timeSlice > 10) {
+            throw new IllegalArgumentException("Time slice must be a value less than ten");
+        }
 
         var distances = new HashMap<Pod, Double>();
             
         var winners = new HashSet<Pod>();
         for (var t = 0; t < timeLimit; t += timeSlice) { 
             for (var p : racers) {
-                var distanceForThisTimeSlice = 0.0; //Pod.distanceTraveled(); // fix later
-                distances.put(distances.getOrDefault(p, 0.0) + distanceForThisTimeSlice); 
+                var distanceForThisTimeSlice = p.distanceTraveled(0, timeLimit, timeSlice);
+                distances.put(p, distances.getOrDefault(p, 0.0) + distanceForThisTimeSlice); 
                 if (distances.get(p) >= distance) {
                     winners.add(p);
                 }

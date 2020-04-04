@@ -17,7 +17,7 @@ public class Pod {
         return velocityFunction.apply(t);
     }
 
-    public double distanceTraveled(double startTime, double endTime, int slices) {
+    public double distanceTraveled(double startTime, double endTime, double slices) {
         if (slices < 1) {
             throw new IllegalArgumentException("At least one slice required");
         }
